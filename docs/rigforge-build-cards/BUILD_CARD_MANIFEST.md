@@ -80,7 +80,8 @@ The Verifier must not receive Generator or Evaluator chat history.
 
 ```
 docs/rigforge-build-cards/
-├── BUILD_CARD_MANIFEST.md          ← This file
+├── BUILD_CARD_00_MASTER.md         ← Canonical 7-phase build card (this is the source of truth)
+├── BUILD_CARD_MANIFEST.md          ← Active tracker
 ├── BUILD_CARD_01_BOOTSTRAP.md      ← Repo scaffold + doctrine
 ├── BUILD_CARD_02_ENVIRONMENT.md    ← Doctor + install proof
 ├── BUILD_CARD_03_RUNTIME.md        ← RunEnvelope + state machine
