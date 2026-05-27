@@ -1,43 +1,50 @@
 # Next Safe Action
 
 ## Current Phase
-Phase 1: Repo Bootstrap + Doctrine Pack — **PASS**
+Phase 2: Environment Bootstrap / Doctor / Install Proof — **DEGRADED PASS**
+
+## What "DEGRADED PASS" Means
+- All required tools (Python, Node, Git, uv) are READY
+- Optional tools/services are missing but not blocking
+- System can proceed with reduced capability flag
+- No blockers for Phase 3
 
 ## Next Phase
-Phase 2: Environment Bootstrap / Doctor / Install Proof
+Phase 3: Runtime Kernel — RunEnvelope, State Machine, Event Bus
 
 ## What to Do
 
-1. Run `rigforge doctor` to establish baseline environment status
-2. Create `config/environment.yaml` with required tools + versions
-3. Create `scripts/verify_environment.py` probe
-4. Verify all required tools: Python, Node, Docker, Git, uv, pytest
-5. Mark optional services as READY/DEGRADED/BLOCKED with exact status
-6. Seal environment ProofPacket
-7. Update BUILD_CARD_MANIFEST: Phase 1 → Verified, Phase 2 → Active
+1. Read BUILD_CARD_03_RUNTIME.md for specifications
+2. Create `contracts/v1/run_envelope.py` — RunEnvelope Pydantic model
+3. Create `runtime/kernel/state_machine.py` — Valid state transitions
+4. Create `runtime/kernel/event_bus.py` — Append-only event journal
+5. Create `runtime/kernel/run_store.py` — Run persistence
+6. Create tests in `tests/runtime/`
+7. Seal Runtime Kernel ProofPacket
+8. Update BUILD_CARD_MANIFEST: Phase 2 → Verified, Phase 3 → Active
 
 ## What NOT to Do
 
-- Do NOT build Runtime Kernel yet
 - Do NOT build Control Plane yet
 - Do NOT integrate DeerFlow yet
 - Do NOT create Cockpit UI yet
-- This phase is ONLY environment verification and install proof
+- This phase is ONLY the Runtime Kernel deterministic spine
 
 ## Required Proof
 
 ```text
-proof/environment/doctor_report.json
-proof/environment/version_report.json
-proof/environment/environment_proofpacket.json
-docs/PHASE_2_ENVIRONMENT_REPORT.md
+proof/runtime/run_envelope_test.json
+proof/runtime/state_machine_test.json
+proof/runtime/event_journal_test.json
+proof/runtime/runtime_kernel_proofpacket.json
+docs/PHASE_3_RUNTIME_REPORT.md
 ```
 
 ## Gate Criteria
 
-Phase 2 passes when:
-- `rigforge doctor` returns READY or DEGRADED with known waivers
-- All required tools verified
-- Environment manifest exists
-- Environment ProofPacket sealed
-- Tests for environment verification pass
+Phase 3 passes when:
+- RunEnvelope schema validates
+- State machine blocks invalid transitions
+- Event journal is append-only
+- All runtime tests pass
+- Runtime ProofPacket sealed

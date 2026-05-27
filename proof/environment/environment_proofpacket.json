@@ -1,0 +1,182 @@
+{
+  "phase": "phase_2_environment_bootstrap",
+  "status": "DEGRADED",
+  "timestamp": "2026-05-27T23:21:36.146607+00:00",
+  "run_id": "env_bootstrap_20260527_232136",
+  "evidence": {
+    "doctor_report": {
+      "timestamp": "2026-05-27T17:15:00Z",
+      "overall_status": "DEGRADED",
+      "checks": {
+        "python": {
+          "status": "READY",
+          "detail": "python3 3.14.5 at /opt/homebrew/bin/python3",
+          "version": "3.14.5"
+        },
+        "node": {
+          "status": "READY",
+          "detail": "node 26.0.0 at /opt/homebrew/bin/node",
+          "version": "26.0.0"
+        },
+        "git": {
+          "status": "READY",
+          "detail": "found at /opt/homebrew/bin/git"
+        },
+        "uv": {
+          "status": "READY",
+          "detail": "uv 0.11.7 at /opt/homebrew/bin/uv",
+          "version": "0.11.7"
+        },
+        "playwright": {
+          "status": "READY",
+          "detail": "found at /opt/homebrew/bin/playwright"
+        },
+        "promptfoo": {
+          "status": "READY",
+          "detail": "found at /opt/homebrew/bin/promptfoo"
+        },
+        "deepeval": {
+          "status": "NOT_INSTALLED",
+          "detail": "deepeval not installed",
+          "fix": "pip install deepeval"
+        },
+        "spec-kit": {
+          "status": "NOT_INSTALLED",
+          "detail": "specify not found",
+          "fix": "Install specify"
+        },
+        "docker": {
+          "status": "READY",
+          "detail": "found at /opt/homebrew/bin/docker"
+        },
+        "postgres": {
+          "status": "READY",
+          "detail": "found at /opt/homebrew/bin/psql"
+        },
+        "qdrant": {
+          "status": "NOT_INSTALLED",
+          "detail": "qdrant not found",
+          "fix": "Install qdrant"
+        },
+        "neo4j": {
+          "status": "READY",
+          "detail": "found at /opt/homebrew/bin/neo4j"
+        },
+        "langfuse": {
+          "status": "NOT_INSTALLED",
+          "detail": "langfuse not found",
+          "fix": "Install langfuse"
+        },
+        "aionui": {
+          "status": "NOT_INSTALLED",
+          "detail": "aionui not found",
+          "fix": "Install aionui"
+        }
+      },
+      "blockers": [],
+      "next_safe_action": "Environment ready"
+    },
+    "version_report": {
+      "timestamp": "2026-05-27T17:15:00Z",
+      "overall_status": "DEGRADED",
+      "versions": {
+        "python": {
+          "expected": "3.14.5",
+          "actual": "3.14.5",
+          "matched": true,
+          "status": "READY"
+        },
+        "node": {
+          "expected": "22.x",
+          "actual": "26.0.0",
+          "matched": true,
+          "status": "READY"
+        },
+        "uv": {
+          "expected": "0.11.7",
+          "actual": "0.11.7",
+          "matched": true,
+          "status": "READY"
+        },
+        "playwright": {
+          "expected": "1.49",
+          "actual": "1.58.0",
+          "matched": false,
+          "status": "MISMATCH"
+        },
+        "ruff": {
+          "expected": "0.15.10",
+          "actual": null,
+          "matched": false,
+          "status": "NOT_INSTALLED"
+        },
+        "pytest": {
+          "expected": "9.0.3",
+          "actual": "9.0.3",
+          "matched": true,
+          "status": "READY"
+        },
+        "pydantic": {
+          "expected": "2.x",
+          "actual": "2.12.5",
+          "matched": true,
+          "status": "READY"
+        },
+        "typer": {
+          "expected": "0.15.x",
+          "actual": "0.25.1",
+          "matched": true,
+          "status": "READY"
+        },
+        "rich": {
+          "expected": "14.x",
+          "actual": null,
+          "matched": false,
+          "status": "NOT_INSTALLED"
+        },
+        "httpx": {
+          "expected": "0.28.x",
+          "actual": "0.28.1",
+          "matched": true,
+          "status": "READY"
+        }
+      }
+    },
+    "services_report": {
+      "timestamp": "2026-05-27T17:15:00Z",
+      "overall_status": "DEGRADED",
+      "services": {
+        "docker": {
+          "status": "UNKNOWN",
+          "detail": "No port configured"
+        },
+        "postgres": {
+          "status": "READY",
+          "detail": "localhost:5432 reachable"
+        },
+        "qdrant": {
+          "status": "NOT_CONFIGURED",
+          "detail": "localhost:6333 unreachable: [Errno 61] Connection refused",
+          "fix": "Start service on localhost:6333"
+        },
+        "neo4j": {
+          "status": "NOT_CONFIGURED",
+          "detail": "localhost:7687 unreachable: [Errno 61] Connection refused",
+          "fix": "Start service on localhost:7687"
+        },
+        "langfuse": {
+          "status": "READY",
+          "detail": "localhost:3000 reachable"
+        },
+        "aionui": {
+          "status": "UNKNOWN",
+          "detail": "No port configured"
+        }
+      },
+      "next_safe_action": "Start required services"
+    }
+  },
+  "blockers": [],
+  "next_safe_action": "Fix optional service issues or proceed with DEGRADED flag",
+  "proof_summary": "Environment status: DEGRADED. Doctor: DEGRADED. Versions: DEGRADED. Services: DEGRADED."
+}

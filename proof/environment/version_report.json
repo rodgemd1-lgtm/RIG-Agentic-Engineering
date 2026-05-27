@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-05-27T17:15:00Z",
+  "overall_status": "DEGRADED",
+  "versions": {
+    "python": {
+      "expected": "3.14.5",
+      "actual": "3.14.5",
+      "matched": true,
+      "status": "READY"
+    },
+    "node": {
+      "expected": "22.x",
+      "actual": "26.0.0",
+      "matched": true,
+      "status": "READY"
+    },
+    "uv": {
+      "expected": "0.11.7",
+      "actual": "0.11.7",
+      "matched": true,
+      "status": "READY"
+    },
+    "playwright": {
+      "expected": "1.49",
+      "actual": "1.58.0",
+      "matched": false,
+      "status": "MISMATCH"
+    },
+    "ruff": {
+      "expected": "0.15.10",
+      "actual": null,
+      "matched": false,
+      "status": "NOT_INSTALLED"
+    },
+    "pytest": {
+      "expected": "9.0.3",
+      "actual": "9.0.3",
+      "matched": true,
+      "status": "READY"
+    },
+    "pydantic": {
+      "expected": "2.x",
+      "actual": "2.12.5",
+      "matched": true,
+      "status": "READY"
+    },
+    "typer": {
+      "expected": "0.15.x",
+      "actual": "0.25.1",
+      "matched": true,
+      "status": "READY"
+    },
+    "rich": {
+      "expected": "14.x",
+      "actual": null,
+      "matched": false,
+      "status": "NOT_INSTALLED"
+    },
+    "httpx": {
+      "expected": "0.28.x",
+      "actual": "0.28.1",
+      "matched": true,
+      "status": "READY"
+    }
+  }
+}

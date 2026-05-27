@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-05-27T17:15:00Z",
+  "overall_status": "DEGRADED",
+  "checks": {
+    "python": {
+      "status": "READY",
+      "detail": "python3 3.14.5 at /opt/homebrew/bin/python3",
+      "version": "3.14.5"
+    },
+    "node": {
+      "status": "READY",
+      "detail": "node 26.0.0 at /opt/homebrew/bin/node",
+      "version": "26.0.0"
+    },
+    "git": {
+      "status": "READY",
+      "detail": "found at /opt/homebrew/bin/git"
+    },
+    "uv": {
+      "status": "READY",
+      "detail": "uv 0.11.7 at /opt/homebrew/bin/uv",
+      "version": "0.11.7"
+    },
+    "playwright": {
+      "status": "READY",
+      "detail": "found at /opt/homebrew/bin/playwright"
+    },
+    "promptfoo": {
+      "status": "READY",
+      "detail": "found at /opt/homebrew/bin/promptfoo"
+    },
+    "deepeval": {
+      "status": "NOT_INSTALLED",
+      "detail": "deepeval not installed",
+      "fix": "pip install deepeval"
+    },
+    "spec-kit": {
+      "status": "NOT_INSTALLED",
+      "detail": "specify not found",
+      "fix": "Install specify"
+    },
+    "docker": {
+      "status": "READY",
+      "detail": "found at /opt/homebrew/bin/docker"
+    },
+    "postgres": {
+      "status": "READY",
+      "detail": "found at /opt/homebrew/bin/psql"
+    },
+    "qdrant": {
+      "status": "NOT_INSTALLED",
+      "detail": "qdrant not found",
+      "fix": "Install qdrant"
+    },
+    "neo4j": {
+      "status": "READY",
+      "detail": "found at /opt/homebrew/bin/neo4j"
+    },
+    "langfuse": {
+      "status": "NOT_INSTALLED",
+      "detail": "langfuse not found",
+      "fix": "Install langfuse"
+    },
+    "aionui": {
+      "status": "NOT_INSTALLED",
+      "detail": "aionui not found",
+      "fix": "Install aionui"
+    }
+  },
+  "blockers": [],
+  "next_safe_action": "Environment ready"
+}

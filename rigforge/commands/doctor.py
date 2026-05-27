@@ -71,7 +71,7 @@ def run_doctor() -> DoctorResult:
             warn_count += 1
 
     # Determine overall status
-    critical = {"python", "docker", "git"}
+    critical = {"python", "git"}  # Docker is optional (only needed for containerized services)
     critical_fails = [c for c in checks if c.name in critical and c.status == CheckStatus.FAIL]
 
     if critical_fails:

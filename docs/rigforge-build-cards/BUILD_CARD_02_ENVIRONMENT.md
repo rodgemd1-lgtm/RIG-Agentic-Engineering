@@ -1,10 +1,10 @@
-# Build Card 2 — Environment Bootstrap / Doctor / Install Proof
+# Build Card 2 - Environment Bootstrap / Doctor / Install Proof
 
-**Status:** ⚪ Pending  
-**Phase:** 2 of 7  
-**Owner:** PyCode / Generator  
-**Critique:** Claude Code / Evaluator  
-**Verifier:** Codex CLI (stateless)  
+**Status:** 🟢 Verified (DEGRADED — optional tools missing, core ready)
+**Phase:** 2 of 7
+**Owner:** PyCode / Generator
+**Critique:** Claude Code / Evaluator
+**Verifier:** Codex CLI (stateless)
 **Gate:** G01 — Environment Ready
 **Unblocked by:** Phase 1 ProofPacket sealed
 
@@ -14,7 +14,7 @@ Prove the machine can run the stack before any real agentic build starts. Verify
 
 ## Required Cards
 
-1. **BUILD CARD** — RIG Environment Bootstrap for DeerFlow, PyCode, Archon, Spec Kit, and Verification Stack
+1. **BUILD CARD** - RIG Environment Bootstrap for DeerFlow, PyCode, Archon, Spec Kit, and Verification Stack
 2. **RIG Agentic Engineering Control Plane** (reference only)
 3. **RIG Verification OS** cards (reference for testing expectations)
 

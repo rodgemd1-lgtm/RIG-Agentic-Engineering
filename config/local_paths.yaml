@@ -1,0 +1,22 @@
+# RIGForge Local Installation Paths
+# Maps tool names to their discovered paths on this machine.
+
+discovered:
+  python: "/opt/homebrew/bin/python3"
+  node: "/opt/homebrew/bin/node"
+  uv: "/opt/homebrew/bin/uv"
+  git: "/opt/homebrew/bin/git"
+  playwright: "/opt/homebrew/bin/playwright"
+  promptfoo: "/opt/homebrew/bin/promptfoo"
+  litellm: "/opt/homebrew/bin/litellm"
+  archon: "/opt/homebrew/bin/archon"
+  neo4j: "/opt/homebrew/bin/neo4j"
+  postgres: "/opt/homebrew/bin/psql"
+
+missing:
+  docker: "Docker Desktop not running"
+  deepeval: "pip install deepeval"
+  qdrant: "docker pull qdrant/qdrant"
+  langfuse: "docker pull langfuse/langfuse"
+  aionui: "Install AionUI"
+  spec-kit: "pip install specify-cli"

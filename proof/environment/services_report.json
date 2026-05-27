@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-05-27T17:15:00Z",
+  "overall_status": "DEGRADED",
+  "services": {
+    "docker": {
+      "status": "UNKNOWN",
+      "detail": "No port configured"
+    },
+    "postgres": {
+      "status": "READY",
+      "detail": "localhost:5432 reachable"
+    },
+    "qdrant": {
+      "status": "NOT_CONFIGURED",
+      "detail": "localhost:6333 unreachable: [Errno 61] Connection refused",
+      "fix": "Start service on localhost:6333"
+    },
+    "neo4j": {
+      "status": "NOT_CONFIGURED",
+      "detail": "localhost:7687 unreachable: [Errno 61] Connection refused",
+      "fix": "Start service on localhost:7687"
+    },
+    "langfuse": {
+      "status": "READY",
+      "detail": "localhost:3000 reachable"
+    },
+    "aionui": {
+      "status": "UNKNOWN",
+      "detail": "No port configured"
+    }
+  },
+  "next_safe_action": "Start required services"
+}

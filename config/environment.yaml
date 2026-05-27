@@ -1,0 +1,83 @@
+# RIGForge Environment Configuration
+# Defines required and optional tools/services for the platform.
+
+required:
+  python:
+    command: python3
+    min_version: "3.11"
+    description: "Python interpreter"
+    check_type: version
+  node:
+    command: node
+    min_version: "18"
+    description: "Node.js runtime"
+    check_type: version
+  git:
+    command: git
+    description: "Git version control"
+    check_type: command
+  uv:
+    command: uv
+    description: "Python package manager"
+    check_type: version
+
+optional:
+  playwright:
+    command: playwright
+    description: "Browser automation"
+    check_type: command
+    fail_message: "Playwright not found — optional, needed for UI testing"
+  promptfoo:
+    command: promptfoo
+    description: "LLM evaluation framework"
+    check_type: command
+    fail_message: "Promptfoo not found — optional, needed for evals"
+  deepeval:
+    command: deepeval
+    description: "LLM testing framework"
+    check_type: module
+    import_name: deepeval
+    fail_message: "DeepEval not found — optional, needed for LLM tests"
+  spec-kit:
+    command: specify
+    description: "Spec Kit CLI"
+    check_type: command
+    fail_message: "Spec Kit not found — optional, needed for spec phases"
+
+services:
+  docker:
+    command: docker
+    description: "Docker daemon (for containerized services)"
+    check_type: daemon
+    required: false
+    fail_message: "Docker not running — optional, needed for Qdrant, Langfuse containers"
+  postgres:
+    command: psql
+    description: "PostgreSQL database"
+    check_type: command
+    required: false
+    fail_message: "Postgres not found — optional, needed for relational storage"
+  qdrant:
+    command: qdrant
+    description: "Qdrant vector database"
+    check_type: command
+    required: false
+    fail_message: "Qdrant not found — optional, needed for vector search"
+  neo4j:
+    command: neo4j
+    description: "Neo4j graph database"
+    check_type: command
+    required: false
+    fail_message: "Neo4j not found — optional, needed for graph storage"
+  langfuse:
+    command: langfuse
+    description: "Langfuse observability"
+    check_type: command
+    required: false
+    fail_message: "Langfuse not found — optional, needed for tracing"
+  aionui:
+    command: aionui
+    description: "AionUI frontend"
+    check_type: command
+    required: false
+    fail_message: "AionUI not found — optional, needed for cockpit UI"

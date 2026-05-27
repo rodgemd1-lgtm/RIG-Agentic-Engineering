@@ -1,0 +1,13 @@
+# RIGForge Runtime Version Matrix
+# Exact versions verified during environment bootstrap.
+
+python: "3.14.5"
+node: "22.x"
+uv: "0.11.7"
+playwright: "1.49"
+ruff: "0.15.10"
+pytest: "9.0.3"
+pydantic: "2.x"
+typer: "0.15.x"
+rich: "14.x"
+httpx: "0.28.x"

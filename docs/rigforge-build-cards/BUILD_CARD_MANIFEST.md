@@ -61,8 +61,8 @@ The Verifier must not receive Generator or Evaluator chat history.
 | Phase | Card | Status | Owner | Blocker |
 |---|---|---|---|---|
 | 1 | Repo Bootstrap + Doctrine Pack | 🟢 Verified | PyCode | — |
-| 2 | Environment Bootstrap | 🔵 Active | PyCode | Phase 1 |
-| 3 | Runtime Kernel | ⚪ Pending | PyCode | Phase 2 |
+| 2 | Environment Bootstrap | 🟢 Verified | PyCode | Phase 1 |
+| 3 | Runtime Kernel | 🔵 Active | PyCode | Phase 2 |
 | 4 | Control Plane | ⚪ Pending | PyCode | Phase 3 |
 | 5 | GEV Loop + DoneContract | ⚪ Pending | PyCode | Phase 4 |
 | 6 | Archon + DeerFlow Harness | ⚪ Pending | PyCode | Phase 5 |
