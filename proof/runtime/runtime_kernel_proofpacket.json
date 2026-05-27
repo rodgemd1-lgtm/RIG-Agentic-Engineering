@@ -1,0 +1,33 @@
+{
+  "phase": "phase_3_runtime_kernel",
+  "status": "PASS",
+  "timestamp": "2026-05-27T17:40:00Z",
+  "run_id": "runtime_kernel_20260527_174000",
+  "evidence": {
+    "run_envelope_valid": true,
+    "state_transitions_valid": true,
+    "invalid_transitions_blocked": true,
+    "event_journal_append_only": true,
+    "run_store_persistent": true,
+    "forbidden_transitions_tested": [
+      "failed->completed",
+      "needs_approval->completed_without_approval",
+      "building->completed",
+      "completed->anything",
+      "failed->building"
+    ]
+  },
+  "test_count": 36,
+  "test_status": "pass",
+  "files_created": [
+    "contracts/v1/run_envelope.py",
+    "runtime/kernel/ids.py",
+    "runtime/kernel/state_machine.py",
+    "runtime/kernel/event_bus.py",
+    "runtime/kernel/run_store.py",
+    "runtime/__init__.py"
+  ],
+  "blockers": [],
+  "next_safe_action": "Phase 4: Control Plane — Registries, ownership, health checks",
+  "proof_summary": "Runtime Kernel PASS. RunEnvelope schema validates. State machine blocks all forbidden transitions (failed->completed, needs_approval->completed without approval, building->completed, completed->any, failed->building). Event bus is append-only with persistence. Run store provides CRUD for RunEnvelope. 36 runtime tests pass. No blockers."
+}
