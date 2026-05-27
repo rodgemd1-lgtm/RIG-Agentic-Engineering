@@ -1,0 +1,108 @@
+# ═══════════════════════════════════════════════════════════════
+# config/deerflow_rig.yaml — DeerFlow 2.0 RIG Integration Config
+# ═══════════════════════════════════════════════════════════════
+#
+# DeerFlow supervises long runs.
+# Archon owns workflow order.
+# PyFlow builds.
+# Hermes governs.
+# Codex verifies.
+#
+# This config enforces RIG boundaries on the DeerFlow harness.
+# ═══════════════════════════════════════════════════════════════
+
+deerflow:
+  # ── Connection ─────────────────────────────────────────────────────────────
+  base_url: http://localhost:2026
+  sandbox_mode: docker
+  host_bash_enabled: false
+  local_trusted_only: true
+
+  # ── Tracing ────────────────────────────────────────────────────────────────
+  tracing:
+    langfuse_enabled: true
+    langsmith_enabled: false
+
+  # ── Memory ─────────────────────────────────────────────────────────────────
+  memory:
+    allow_long_term_memory: true
+    write_requires_proofpacket: true
+    namespace_firewall: true
+
+  # ── Permissions (RIG boundary enforcement) ─────────────────────────────────
+  permissions:
+    can_modify_archon_workflows: false
+    can_modify_rig_gates: false
+    can_modify_audit_logs: false
+    can_perform_external_side_effects: false
+
+  # ── Limits ─────────────────────────────────────────────────────────────────
+  limits:
+    max_subagents: 6
+    max_runtime_minutes: 240
+    max_cost_usd: 20
+    max_iterations_per_subagent: 5
+
+# ═══════════════════════════════════════════════════════════════
+# Archon Bridge Config
+# ═══════════════════════════════════════════════════════════════
+archon_bridge:
+  allowed_node_types:
+    - deerflow
+    - deerflow_resume
+
+  allowed_input_files:
+    - spec.md
+    - plan.md
+    - DoneContract.yaml
+    - tasks.md
+    - intent.md
+
+  forbidden_actions:
+    - modify_workflow
+    - skip_validation
+    - mark_completed_without_verifier
+    - choose_next_node
+
+# ═══════════════════════════════════════════════════════════════
+# PyCode Bridge Config
+# ═══════════════════════════════════════════════════════════════
+pycode_bridge:
+  executable: pycode
+  role: generator
+  allowed_commands:
+    - implement_mission
+    - run_tests
+    - write_proofpacket
+    - generate_code
+    - write_file
+    - read_file
+    - list_files
+    - run_linter
+    - run_typecheck
+  forbidden_commands:
+    - approve
+    - deploy_production
+    - edit_frozen_contract
+    - delete_run
+    - modify_workflow
+    - write_memory
+    - send_external
+    - modify_gate
+
+# ═══════════════════════════════════════════════════════════════
+# Workspace Mapping
+# ═══════════════════════════════════════════════════════════════
+workspace_mapping:
+  uploads:   "runs/{run_id}/inputs/"
+  workspace: "worktrees/{run_id}/"
+  outputs:   "runs/{run_id}/outputs/"
+
+# ═══════════════════════════════════════════════════════════════
+# Proof Adapter Config
+# ═══════════════════════════════════════════════════════════════
+proof_adapter:
+  proof_dir: "rig-runtime/proof/deerflow"
+  require_proof: true
+  hash_algorithm: sha256
+  capture_subagent_events: true

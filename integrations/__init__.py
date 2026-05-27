@@ -1,0 +1,1 @@
+"""RIG Integration Adapters."""

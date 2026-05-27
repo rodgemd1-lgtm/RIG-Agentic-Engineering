@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# RIG runtime state
+.deerflow_mappings.json
+rig-runtime/.deerflow_mappings.json
+rig-runtime/proof/
+rig-runtime/phases/
+worktrees/
+outputs/
+
+# DeerFlow
+deerflow/.deer-flow/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Secrets
+.env
+*.key
+*.pem
