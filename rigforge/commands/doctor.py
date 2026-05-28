@@ -39,6 +39,7 @@ DOCTOR_CHECKS = {
     "langfuse": lambda: check_command("langfuse", "langfuse", "docker pull langfuse/langfuse"),
     "aionui": lambda: check_command("aionui", "aionui", "Install AionUI"),
     "agent-skills": lambda: check_command("agent-skills", "echo", "N/A (path check)"),
+    "sonarqube": lambda: check_command("sonarqube", "sonar-scanner", "brew install sonar-scanner or set up SonarQube container"),
 }
 
 
