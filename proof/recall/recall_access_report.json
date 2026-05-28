@@ -1,0 +1,25 @@
+{
+  "mission": "recall_readonly_card_context_setup",
+  "status": "READY",
+  "auth_method": "MCP_OR_API_ENV",
+  "api_key_present": true,
+  "api_key_printed": false,
+  "api_key_committed": false,
+  "cards_requested": [
+    "BUILD CARD — RIGForge Build Order: 7-Phase Agentic Engineering Platform Setup",
+    "MASTER CONTROL PLAN — RIG Agentic Engineering Platform Full How-To",
+    "BUILD CARD — RIG Runtime Kernel: RunEnvelope, State Machine, and Event Bus",
+    "BUILD CARD — RIG Agentic Engineering Control Plane",
+    "BUILD CARD — RIG DoneContract Schema for Generator-Evaluator-Verifier Builds",
+    "BUILD CARD — RIG Studio Retrofit Protocol for Existing Studios",
+    "BUILD CARD — RIG Agentic Engineering Failure Runbook and Incident Response",
+    "BUILD CARD — RIG Cockpit and Mission Control for Agentic Engineering Runs",
+    "BUILD CARD — RIG DeerFlow 2.0 Long-Horizon Harness Integration",
+    "BUILD CARD — RIGForge MetaGPT Spec Generator Helper"
+  ],
+  "cards_found": [],
+  "cards_missing": [],
+  "context_pack_created": false,
+  "blockers": [],
+  "next_safe_action": "Run GTM Studio inventory"
+}
