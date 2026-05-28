@@ -1,0 +1,55 @@
+# RIGForge Tool Registry
+# Every tool must have an allowed agent list.
+
+tools:
+  - id: "web_search"
+    name: "Web Search"
+    owner: "mike"
+    allowed_agents: ["hermes", "codex"]
+    requires_approval: true
+    proof_required: true
+
+  - id: "file_read"
+    name: "Read File"
+    owner: "mike"
+    allowed_agents: ["pycode", "codex", "evaluator", "verifier"]
+    requires_approval: false
+    proof_required: false
+
+  - id: "file_write"
+    name: "Write File"
+    owner: "mike"
+    allowed_agents: ["pycode"]
+    requires_approval: false
+    proof_required: true
+
+  - id: "shell_exec"
+    name: "Shell Execute"
+    owner: "mike"
+    allowed_agents: ["pycode"]
+    requires_approval: true
+    proof_required: true
+
+  - id: "aider"
+    name: "Aider Coding Tool"
+    owner: "generator"
+    allowed_agents: ["pycode", "picode"]
+    requires_approval: false
+    proof_required: true
+    cannot_self_verify: true
+
+  - id: "sonarqube"
+    name: "SonarQube Static Analysis"
+    owner: "verifier"
+    allowed_agents: ["verifier", "codex"]
+    requires_approval: false
+    proof_required: true
+    earliest_phase: "phase_5_gev"
+
+  - id: "metagpt"
+    name: "MetaGPT Spec Generator"
+    owner: "evaluator"
+    allowed_agents: ["evaluator"]
+    requires_approval: false
+    proof_required: false
+    cannot_write_binding_requirements: true

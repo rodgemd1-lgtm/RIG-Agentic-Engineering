@@ -1,0 +1,51 @@
+# RIGForge Approval Flow Registry
+# No approval = no external side effect.
+
+approval_flows:
+  - id: "external-post"
+    name: "External Platform Post"
+    owner: "mike"
+    description: "Post content to LinkedIn or other external platforms"
+    required_signers:
+      - "mike"
+    proof_required: true
+
+  - id: "production-deploy"
+    name: "Production Deployment"
+    owner: "mike"
+    description: "Deploy to production environment"
+    required_signers:
+      - "mike"
+    proof_required: true
+
+  - id: "schedule-activation"
+    name: "Schedule Activation"
+    owner: "mike"
+    description: "Activate automated posting schedule"
+    required_signers:
+      - "mike"
+    proof_required: true
+
+  - id: "data-export"
+    name: "Data Export"
+    owner: "mike"
+    description: "Export private or customer data"
+    required_signers:
+      - "mike"
+    proof_required: true
+
+  - id: "cost-approval"
+    name: "Cost Over Threshold"
+    owner: "mike"
+    description: "Approve cost exceeding $100 per mission"
+    required_signers:
+      - "mike"
+    proof_required: true
+
+  - id: "rollback"
+    name: "Production Rollback"
+    owner: "mike"
+    description: "Rollback a production change"
+    required_signers:
+      - "mike"
+    proof_required: true

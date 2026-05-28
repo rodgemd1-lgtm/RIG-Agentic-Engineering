@@ -1,0 +1,9 @@
+# RIGForge MCP Server Registry
+
+mcp_servers:
+  - id: "mcp-stitch"
+    name: "Stitch MCP Server"
+    owner: "mike"
+    command: "npx stitch-mcp"
+    allowed_agents: ["pycode"]
+    proof_path: "proof/mcp-stitch/"

@@ -1,0 +1,38 @@
+# RIGForge Application Registry
+
+apps:
+  - id: "linkedin-studio"
+    name: "LinkedIn Studio"
+    owner: "mike"
+    studio: "linkedin"
+    healthcheck:
+      type: "http"
+      endpoint: "http://localhost:8080/health"
+      interval: "60s"
+    proof_path: "proof/linkedin-studio/"
+    allowed_agents: ["pycode", "claude"]
+    external: true
+
+  - id: "gtm-studio"
+    name: "GTM Studio"
+    owner: "mike"
+    studio: "gtm"
+    healthcheck:
+      type: "http"
+      endpoint: "http://localhost:8081/health"
+      interval: "60s"
+    proof_path: "proof/gtm-studio/"
+    allowed_agents: ["pycode", "claude"]
+    external: true
+
+  - id: "rigforge-cockpit"
+    name: "RIG Mission Control"
+    owner: "mike"
+    studio: "platform"
+    healthcheck:
+      type: "http"
+      endpoint: "http://localhost:3000/health"
+      interval: "60s"
+    proof_path: "proof/cockpit/"
+    allowed_agents: ["pycode"]
+    external: false

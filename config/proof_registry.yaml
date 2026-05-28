@@ -1,0 +1,59 @@
+# RIGForge Proof Path Registry
+# Every workflow must have a proof path.
+
+proof_paths:
+  - id: "bootstrap-proof"
+    name: "Bootstrap Proof"
+    owner: "mike"
+    path: "proof/bootstrap/"
+    required_for:
+      - "phase_1_bootstrap"
+
+  - id: "environment-proof"
+    name: "Environment Proof"
+    owner: "mike"
+    path: "proof/environment/"
+    required_for:
+      - "phase_2_environment"
+
+  - id: "runtime-proof"
+    name: "Runtime Kernel Proof"
+    owner: "mike"
+    path: "proof/runtime/"
+    required_for:
+      - "phase_3_runtime"
+
+  - id: "control-plane-proof"
+    name: "Control Plane Proof"
+    owner: "mike"
+    path: "proof/control_plane/"
+    required_for:
+      - "phase_4_control_plane"
+
+  - id: "gev-proof"
+    name: "GEV Loop Proof"
+    owner: "mike"
+    path: "proof/gev/"
+    required_for:
+      - "phase_5_gev"
+
+  - id: "deerflow-proof"
+    name: "DeerFlow Harness Proof"
+    owner: "mike"
+    path: "proof/deerflow/"
+    required_for:
+      - "phase_6_deerflow"
+
+  - id: "cockpit-proof"
+    name: "Cockpit Proof"
+    owner: "mike"
+    path: "proof/cockpit/"
+    required_for:
+      - "phase_7_cockpit"
+
+  - id: "linkedin-studio-proof"
+    name: "LinkedIn Studio Proof"
+    owner: "mike"
+    path: "proof/linkedin-studio/"
+    required_for:
+      - "studio_retrofit"

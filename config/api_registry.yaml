@@ -1,0 +1,27 @@
+# RIGForge API Surface Registry
+
+apis:
+  - id: "rigforge-status"
+    name: "RIGForge Status API"
+    owner: "mike"
+    endpoint: "/api/v1/status"
+    method: "GET"
+    allowed_agents: ["codex", "hermes"]
+    requires_approval: false
+
+  - id: "rigforge-runs"
+    name: "RIGForge Runs API"
+    owner: "mike"
+    endpoint: "/api/v1/runs"
+    method: "GET"
+    allowed_agents: ["codex", "cockpit"]
+    requires_approval: false
+
+  - id: "rigforge-approve"
+    name: "RIGForge Approve API"
+    owner: "mike"
+    endpoint: "/api/v1/approve"
+    method: "POST"
+    allowed_agents: ["codex"]
+    requires_approval: true
+    external_side_effect: true

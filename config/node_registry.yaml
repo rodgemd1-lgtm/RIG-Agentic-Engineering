@@ -1,0 +1,13 @@
+# RIGForge Node/Compute Registry
+
+nodes:
+  - id: "local-macbook"
+    name: "Local MacBook Pro"
+    owner: "mike"
+    hostname: "localhost"
+    capabilities:
+      - "python"
+      - "node"
+      - "docker"
+      - "playwright"
+    allowed_agents: ["pycode", "codex"]

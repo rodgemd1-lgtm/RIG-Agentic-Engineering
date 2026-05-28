@@ -1,0 +1,30 @@
+# RIGForge Workflow Registry
+
+workflows:
+  - id: "rigforge-build"
+    name: "RIGForge Build Workflow"
+    owner: "mike"
+    path: "workflows/rigforge_build.yaml"
+    proof_path: "proof/workflows/rigforge_build/"
+    allowed_agents: ["codex", "pycode"]
+
+  - id: "rigforge-verify"
+    name: "RIGForge Verify Workflow"
+    owner: "mike"
+    path: "workflows/rigforge_verify.yaml"
+    proof_path: "proof/workflows/rigforge_verify/"
+    allowed_agents: ["codex", "verifier"]
+
+  - id: "studio-retrofit"
+    name: "Studio Retrofit Workflow"
+    owner: "mike"
+    path: "workflows/studio_retrofit.yaml"
+    proof_path: "proof/workflows/studio_retrofit/"
+    allowed_agents: ["codex", "pycode"]
+
+  - id: "app-build-mission"
+    name: "App Build Mission"
+    owner: "mike"
+    path: "workflows/app_build_mission.yaml"
+    proof_path: "proof/workflows/app_build_mission/"
+    allowed_agents: ["codex", "pycode"]

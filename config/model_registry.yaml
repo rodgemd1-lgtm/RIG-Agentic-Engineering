@@ -1,0 +1,50 @@
+# RIGForge LLM Model Registry
+# Every model must specify allowed use cases.
+
+models:
+  - id: "gpt-4o"
+    name: "GPT-4o"
+    owner: "mike"
+    allowed_use_cases:
+      - "evaluation"
+      - "generation"
+      - "verification"
+    temperature_default: 0.0
+    max_tokens: 4096
+
+  - id: "gpt-4o-mini"
+    name: "GPT-4o-mini"
+    owner: "mike"
+    allowed_use_cases:
+      - "evaluation"
+      - "generation"
+    temperature_default: 0.0
+    max_tokens: 2048
+
+  - id: "claude-sonnet-4"
+    name: "Claude Sonnet 4"
+    owner: "mike"
+    allowed_use_cases:
+      - "evaluation"
+      - "generation"
+      - "critique"
+    temperature_default: 0.0
+    max_tokens: 4096
+
+  - id: "deepseek-chat"
+    name: "DeepSeek Chat"
+    owner: "mike"
+    allowed_use_cases:
+      - "evaluation"
+      - "generation"
+    temperature_default: 0.0
+    max_tokens: 4096
+
+  - id: "qwen-2.5-coder"
+    name: "Qwen 2.5 Coder"
+    owner: "mike"
+    allowed_use_cases:
+      - "generation"
+      - "critique"
+    temperature_default: 0.0
+    max_tokens: 2048

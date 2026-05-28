@@ -1,40 +1,43 @@
 # Next Safe Action
 
 ## Current Phase
-Phase 3: Runtime Kernel — **PASS**
+Phase 4: Control Plane — **PASS**
 
 ## Next Phase
-Phase 4: Control Plane — Registries, Ownership, Health Checks
+Phase 5: GEV Loop + DoneContract
 
 ## What to Do
 
-1. Create `config/service_registry.yaml` with service definitions
-2. Create `config/tool_registry.yaml` with tool contracts
-3. Create `config/model_registry.yaml` with allowed LLMs
-4. Create `runtime/control_plane/registry_loader.py` and `registry_validator.py`
-5. Verify every entry has owner, healthcheck, proof path
-6. Create tests in `tests/control_plane/`
-7. Seal Control Plane ProofPacket
+1. Create `contracts/v1/done_contract.py` — DoneContract Pydantic model
+2. Create `contracts/v1/verifier_package.py` — What verifier receives
+3. Create `contracts/v1/required_artifact.py` — Artifact requirements
+4. Create `contracts/v1/acceptance_criterion.py` — Pass/fail criteria
+5. Create `contracts/v1/forbidden_action.py` — Actions generator must not take
+6. Create `runtime/gev/generator_runner.py`, `evaluator_runner.py`, `verifier_runner.py`
+7. Wire `rigforge specify <studio>`, `rigforge build <studio>`, `rigforge verify <studio>`
+8. Create `tests/gev/`
+9. Seal GEV ProofPacket
 
-## What NOT to Do
-
-- Do NOT build GEV Loop yet
-- Do NOT integrate DeerFlow yet
-- Do NOT create Cockpit yet
-
-## Required Proof
+## Core Law
 
 ```text
-proof/control_plane/registry_verified.json
-proof/control_plane/healthchecks_passed.json
-proof/control_plane/control_plane_proofpacket.json
-docs/PHASE_4_CONTROL_PLANE_REPORT.md
+No DoneContract, no code.
+No acceptance criteria, no mission.
+No required artifacts, no verifier package.
+No verifier package, no PASS.
 ```
 
-## Gate Criteria
+## Verifier Isolation
 
-Phase 4 passes when:
-- All registries exist and validate
-- Every service has owner, healthcheck, proof path
-- Unregistered service blocked
-- Control Plane tests pass
+Verifier receives ONLY:
+- spec.md
+- DoneContract.yaml
+- Final file tree
+- Test commands
+- ProofPacket paths
+- Hash manifest
+
+Verifier must NOT receive:
+- Generator chat history
+- Evaluator chat history
+- Intermediate drafts

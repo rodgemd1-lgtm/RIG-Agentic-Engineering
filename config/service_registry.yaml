@@ -1,0 +1,39 @@
+# RIGForge Service Registry
+# If it is not registered, it does not exist.
+
+services:
+  - id: "rigforge-cli"
+    name: "RIGForge CLI"
+    owner: "mike"
+    studio: "platform"
+    healthcheck:
+      type: "command"
+      command: "rigforge doctor --json"
+      interval: "300s"
+    proof_path: "proof/bootstrap/"
+    allowed_agents: ["pycode", "codex"]
+    external: false
+
+  - id: "linkedin-studio"
+    name: "LinkedIn Studio"
+    owner: "mike"
+    studio: "linkedin"
+    healthcheck:
+      type: "http"
+      endpoint: "http://localhost:8080/health"
+      interval: "60s"
+    proof_path: "proof/linkedin-studio/"
+    allowed_agents: ["pycode", "claude"]
+    external: true
+
+  - id: "cockpit"
+    name: "RIG Mission Control"
+    owner: "mike"
+    studio: "platform"
+    healthcheck:
+      type: "http"
+      endpoint: "http://localhost:3000/health"
+      interval: "60s"
+    proof_path: "proof/cockpit/"
+    allowed_agents: ["pycode"]
+    external: false
