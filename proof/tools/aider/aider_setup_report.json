@@ -1,0 +1,15 @@
+{
+  "tool": "aider",
+  "role": "bounded_code_generator",
+  "status": "AVAILABLE",
+  "version": "0.86.2",
+  "install_path": "/Users/mikerodgers/.local/bin/aider",
+  "install_command": "uv tool install aider-chat",
+  "verification_commands": ["aider --version"],
+  "policy_doc_exists": true,
+  "registry_entry_exists": true,
+  "forbidden_from_verifier_role": true,
+  "requires_donecontract_for_implementation": true,
+  "blockers": [],
+  "next_safe_action": "GTM Studio retrofit inventory"
+}

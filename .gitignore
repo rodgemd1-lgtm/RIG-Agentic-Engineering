@@ -36,5 +36,11 @@ htmlcov/
 
 # Secrets
 .env
+.env.*
 *.key
 *.pem
+
+# Aider
+.aider*
+.aider.chat.history.md
+.aider.input.history

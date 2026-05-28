@@ -1,0 +1,42 @@
+aider:
+  name: Aider
+  category: generator_tool
+  rigforge_role: bounded_code_generator
+  earliest_phase: phase_5_gev_donecontract
+  phase_2_use: install_and_availability_check_only
+  version: "0.86.2"
+  install_command: uv tool install aider-chat
+  verification_commands:
+    - aider --version
+  allowed_agents:
+    - generator
+    - pycode
+    - picode
+  forbidden_agents:
+    - verifier
+    - evaluator
+  required_inputs:
+    - spec.md
+    - DoneContract
+    - allowed_files
+    - forbidden_files
+    - required_tests
+    - proof_requirements
+  forbidden_actions:
+    - self_verify
+    - approve_own_work
+    - modify_frozen_doctrine
+    - modify_production_without_approval
+    - perform_external_side_effects
+    - read_verifier_private_notes
+  required_outputs:
+    - files_changed_summary
+    - tests_run
+    - test_results
+    - proof_draft
+  required_downstream_gates:
+    - evaluator_review
+    - stateless_verifier
+    - proofpacket_seal
+  status: AVAILABLE
+  proof_path: proof/tools/aider/
