@@ -1,0 +1,128 @@
+# Pending Registry Entries for Agentic Assembly Line Tools
+# These entries are staged for Phase 4 (Control Plane) and later.
+# Do not activate before Control Plane exists.
+
+services:
+  sonarqube:
+    id: sonarqube
+    name: SonarQube Static Analysis
+    owner: verifier
+    type: static_analysis
+    description: "Deterministic code quality and security gate"
+    healthcheck:
+      type: http
+      endpoint: http://localhost:9000/api/system/status
+    required_for:
+      - production_code
+      - studio_retrofit
+      - app_build
+    proof_path: proof/static_analysis/
+    allowed_agents:
+      - verifier
+      - codex
+    earliest_phase: phase_2_doctor
+    required_phase: phase_5_gev
+    status: pending
+    rules:
+      max_cyclomatic_complexity: 10
+      no_critical_issues: true
+      no_blocker_issues: true
+      coverage_threshold: 0.85
+
+tools:
+  aider:
+    id: aider
+    name: Aider Coding Tool
+    owner: generator
+    type: generator_tool
+    description: "AI pair programming tool for file editing"
+    allowed_agents:
+      - generator
+      - pycode
+      - picode
+    required_inputs:
+      - spec.md
+      - DoneContract
+      - allowed_files
+      - forbidden_files
+      - required_tests
+    cannot_self_verify: true
+    earliest_phase: phase_5_gev
+    status: pending
+
+  metagpt:
+    id: metagpt
+    name: MetaGPT Spec Generator
+    owner: evaluator
+    type: spec_draft_generator
+    description: "Draft PRD and spec generation helper"
+    allowed_agents:
+      - evaluator
+    output_artifacts:
+      - draft_spec.md
+      - draft_prd.md
+    requires_evaluation: true
+    cannot_write_binding_requirements: true
+    earliest_phase: phase_5_gev
+    status: pending
+
+  diag_agent:
+    id: diag_agent
+    name: Architecture Diagram Generator
+    owner: generator
+    type: architecture_visualization
+    description: "C4 diagram and architecture document generator"
+    allowed_agents:
+      - generator
+    output_artifacts:
+      - C4_CONTEXT.md
+      - C4_CONTAINER.md
+      - C4_COMPONENT.md
+      - ARCHITECTURE_DECISION_RECORD.md
+    cannot_replace_human_approval: true
+    earliest_phase: phase_5_gev
+    status: pending
+
+  pr_agent:
+    id: pr_agent
+    name: PR Review Assistant
+    owner: evaluator
+    type: review_assistant
+    description: "Review assistant for pull requests"
+    allowed_agents:
+      - evaluator
+    cannot_replace:
+      - Evaluator
+      - Verifier
+      - SonarQube
+      - ProofPacket
+    earliest_phase: phase_5_gev
+    status: pending
+
+  langgraph:
+    id: langgraph
+    name: LangGraph Workflow Backend
+    owner: hermes
+    type: workflow_backend
+    description: "Optional workflow execution backend for multi-step agents"
+    allowed_agents:
+      - hermes
+    cannot_replace:
+      - RunEnvelope
+      - Archon workflow policy
+      - ProofPacket
+      - Control Plane
+    earliest_phase: phase_6_deerflow
+    status: pending
+
+workflows:
+  sonarqube_gate:
+    id: sonarqube_gate
+    name: SonarQube Quality Gate
+    owner: verifier
+    description: "Static analysis gate before production code"
+    required_in_phases:
+      - phase_5_gev
+      - phase_7_cockpit
+    proof_path: proof/static_analysis/
+    status: pending
