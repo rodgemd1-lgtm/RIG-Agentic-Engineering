@@ -51,6 +51,13 @@ proof_paths:
     required_for:
       - "phase_7_cockpit"
 
+  - id: "v10-readiness-proof"
+    name: "V10 Readiness Design Proof"
+    owner: "mike"
+    path: "proof/v10/"
+    required_for:
+      - "v10_readiness_design"
+
   - id: "linkedin-studio-proof"
     name: "LinkedIn Studio Proof"
     owner: "mike"

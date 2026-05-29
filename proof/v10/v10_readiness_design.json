@@ -1,0 +1,29 @@
+{
+  "artifact": "v10_readiness_design",
+  "status": "DESIGN_ONLY",
+  "not_final_pass": true,
+  "summary": "Planning and proof artifact for Git agent, CLI, MCP, and weekly-improvement readiness.",
+  "smoke_command": "rigforge doctor --json",
+  "proof_paths": [
+    "docs/V10_READINESS_DESIGN.md",
+    "proof/v10/v10_readiness_design.json",
+    "config/proof_registry.yaml",
+    "tests/test_v10_readiness_design.py"
+  ],
+  "blockers": [
+    "No sealed MCP transport/auth contract yet",
+    "No deterministic MCP surface tests yet",
+    "No weekly-improvement workflow proof yet",
+    "GEV / DoneContract phase is still active"
+  ],
+  "test_commands": [
+    "python3 -m pytest tests/test_v10_readiness_design.py -q",
+    "python3 -m pytest tests/test_doctor.py -q",
+    "rigforge doctor --json"
+  ],
+  "evidence": {
+    "design_doc": "docs/V10_READINESS_DESIGN.md",
+    "current_mcp_registry": "config/mcp_registry.yaml",
+    "current_manifest": "docs/rigforge-build-cards/BUILD_CARD_MANIFEST.md"
+  }
+}
